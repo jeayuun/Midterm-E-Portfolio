@@ -814,9 +814,66 @@ html {
     display: none;
 }
 
-/* When the project cards are revealed, show the space */
 #projectCards.visible + #blankSpace {
     display: block;
-    height: 100px; /* You can adjust this based on how much space you want at the bottom */
+    height: 100px; 
 }
 
+.modal-dialog {
+    max-width: 800px; 
+    width: 80%; 
+}
+
+.modal-content {
+    background-color: #1a1a1a;
+    color: white;
+    border-radius: 12px;
+}
+
+.modal-header {
+    border-bottom: none; 
+}
+
+.modal-title {
+    font-size: 1.5rem; 
+    font-weight: 700;
+}
+
+.modal-body {
+    padding-top: 20px;
+}
+
+#modalImage {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+#projectSubtitle {
+    font-size: 1.1rem;
+    color: #aaa; 
+}
+
+#projectDescription {
+    font-size: 1rem;
+    color: #ddd;
+    margin-top: 15px;
+}
+
+#projectLink {
+    margin-top: 20px;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    background-color: #333;
+    color: white;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+}
+
+#projectLink:hover {
+    background-color: #666; 
+    color: white;
+}

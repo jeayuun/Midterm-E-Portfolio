@@ -65,8 +65,9 @@
             <p class="description" style="margin: 50px 0; margin-top: 25px;" data-aos="fade-up">
                 Click on each card to view them one by one.
             </p>
-            <div class="skills-grid" data-aos="fade-up">
 
+            <!-- Projects Cards -->
+            <div class="skills-grid" data-aos="fade-up">
                 <div class="skill-card">
                     <div class="skill-header">
                         <i class="bi bi-tree-fill skill-icon"></i>
@@ -155,13 +156,149 @@
                     <p>Midterm Project: Midterm E-Portfolio</p>
                 </div>
             </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content" style="background-color: #1a1918; color: white; border: 1px solid #ffffff24;">
+                    <div class="modal-header" style="border-bottom: none;">
+                    <h5 class="modal-title" id="projectModalLabel"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" style="padding-top: 20px;">
+                    <img id="modalImage" src="" alt="Project Image" class="img-fluid mb-3" style="border-radius: 12px; object-fit: cover;">
+                    <p id="projectSubtitle" style="font-size: 1.1rem;"></p>
+                    <p id="projectDescription" style="font-size: 1rem; color: #ddd; margin-top: 15px;"></p>
+                    <a id="projectLink" href="#" class="btn btn-primary" target="_blank" style="margin-top: 20px;">View Project</a>
+                    </div>
+                </div>
+                </div>
+            </div>
         </div>
     </section>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const projectCards = document.querySelectorAll('.skill-card');
+            const modalImage = document.getElementById('modalImage');
+            const projectModalLabel = document.getElementById('projectModalLabel');
+            const projectSubtitle = document.getElementById('projectSubtitle');
+            const projectDescription = document.getElementById('projectDescription');
+            const projectLink = document.getElementById('projectLink');
+
+            projectCards.forEach((card, index) => {
+                card.addEventListener('click', function () {
+                    let title = "";
+                    let subtitle = "";
+                    let description = "";
+                    let imgSrc = "";
+
+                    if (index === 0) {
+                        title = "Naughty or Nice";
+                        subtitle = "Midterm Group Project: Quiz Application";
+                        description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+                        imgSrc = "static/images/MidtermQuiz.png";
+                        link = "https://jeayuun.github.io/Restaurant/index.html";
+                    }
+
+                    else if (index === 1) {
+                        title = "Holiday Website";
+                        subtitle = "Activity 1: HTML Text and Images";
+                        description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+                        imgSrc = "static/images/Activity1.3.png";
+                        link = "https://jeayuun.github.io/Holidays/";
+                    }
+                    
+                    else if (index === 2) {
+                        title = "Recipe Book";
+                        subtitle = "Activity 2: HTML Tags";
+                        description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+                        imgSrc = "static/images/Activity2.png";
+                        link = "https://jeayuun.github.io/Holidays/";
+                    }
+                    
+                    else if (index === 3) {
+                        title = "My Portfolio";
+                        subtitle = "Activity 3: Building a Personal Portfolio Page Using Bootstrap";
+                        description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+                        imgSrc = "static/images/Activity3.png";
+                        link = "https://jeayuun.github.io/Personal-Portfolio-Activity-3/";
+                    }
+                    
+                    else if (index === 4) {
+                        title = "Bistrovanti Restaurant";
+                        subtitle = "Activity 4: Responsive Restaurant Website (Group Activity)";
+                        description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+                        imgSrc = "static/images/Activity4.png";
+                        link = "https://jeayuun.github.io/Restaurant/";
+                    }
+                    
+                    else if (index === 5) {
+                        title = "AESPA Conference";
+                        subtitle = "Activity 5: Event or Conference Webpage";
+                        description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+                        imgSrc = "static/images/Activity5.png";
+                        link = "https://jeayuun.github.io/Conference-Activity-5/";
+                    }
+                    
+                    else if (index === 6) {
+                        title = "Operators in JS";
+                        subtitle = "Activity 6: Combined Operators using Javascript";
+                        description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+                        imgSrc = "static/images/Activity6.png";
+                        link = "https://www.dropbox.com/scl/fi/l8hacbmmjzn6pieksvbk2/COMP-016-VILLEGAS_Activity-6.html?rlkey=r118fds4ct9be7qi5a4l4a0s8&st=fh66fwbj&dl=0";
+                    }
+                    
+                    else if (index === 7) {
+                        title = "HTML Assessment";
+                        subtitle = "Assignment 1: Web Development";
+                        description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+                        imgSrc = "static/images/Assignment1.png";
+                        link = "https://www.dropbox.com/scl/fi/ivhg7wsu3qkdb6ck6os3w/COMP-016_Villegas_BSCS-3-1N_Assignment-1-Web-Development.pdf?rlkey=2ztxqrk8vahnhpfom10ulzfeu&st=thzok0uy&dl=0";
+                    }
+                    
+                    else if (index === 8) {
+                        title = "HTML/CSS Quiz";
+                        subtitle = "Quiz 1: HTML and CSS learning assessment";
+                        description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+                        imgSrc = "static/images/Quiz1.png";
+                        link = "https://www.dropbox.com/scl/fi/p1x4t1xnprdtbij17p3di/Quiz1.png?rlkey=2h0c69vq703z6x0j1twg3rdk6&st=0azyd8xh&dl=0";
+                    }
+                    
+                    else if (index === 9) {
+                        title = "About Me";
+                        subtitle = "Get to know more about yours truly !";
+                        description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+                        imgSrc = "static/images/AboutMe.png";
+                        link = "https://www.dropbox.com/scl/fi/effxb032yiolmmsa5h18l/COMP-016_Villegas_BSCS-3-1N_About-Me.pdf?rlkey=4ti6f9syq786kmaujdd87p3wf&st=z7hw6gby&dl=0";
+                    }
+                    
+                    else {
+                        title = "Midterm E-Portfolio";
+                        subtitle = "Midterm Project: Midterm E-Portfolio";
+                        description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.";
+                        imgSrc = "static/images/MidtermPortfolio.png"; 
+                        link = "#"; 
+                    }
+
+                    modalImage.src = imgSrc;
+                    projectModalLabel.textContent = title;
+                    projectSubtitle.textContent = subtitle;
+                    projectDescription.textContent = description;
+                    projectLink.href = link;
+
+                    const modal = new bootstrap.Modal(document.getElementById('projectModal'));
+                    modal.show();
+                });
+            });
+        });
+
+    </script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>    
     <script src="static/app.js" type="module"></script>
+    
 </body>
 
 </html>
