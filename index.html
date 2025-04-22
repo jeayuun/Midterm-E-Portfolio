@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Portfolio | Home</title>
+    <link rel="icon" type="image/png" href="static/images/me.jpg">
+    <link rel="stylesheet" href="static/styles.css" type="text/css" />
+    
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="midterm.html">Midterm</a></li>
+                <li class="nav-item"><a class="nav-link" href="final.html">Final</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home" class="home-section dark-section">
+        <img src="static/images/me.jpg" alt="Profile Picture" class="profile-img" data-aos="fade-up">
+        <h1 class="title" data-aos="fade-up">I'm Jedidiah.</h1>
+        <p class="subtitle" data-aos="fade-up">An aspiring Software Engineer.</p>
+        <p class="description" data-aos="fade-up">
+            I'm a Computer Science undergraduate at the Polytechnic University of the Philippines.
+            This website serves as a portfolio of my development and design experience, and features all activities,
+            quizzes, and examinations from my COMP 016: Web Development course.
+        </p>
+        <a href="#projects" class="show-work-btn" data-aos="fade-up">See my work</a>
+        <div class="arrow-container" data-aos="fade-down">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none"
+                stroke="#353535" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <polyline points="19 12 12 19 5 12"></polyline>
+            </svg>
+        </div>
+    </section>
+
+    <section id="projects" class="light-section" data-aos="fade-up">
+        <div class="container">
+            <div id="projectsCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="project-container">
+                            <img src="static/images/Project3.png" class="project-img" alt="Project 3">
+                            <h3 class="project-title">Phishing, Please!</h3>
+                            <p class="project-role">Project Manager</p>
+                            <p class="project-desc">
+                                An educational simulation game where players act as cybersecurity analysts tasked with
+                                identifying phishing tactics. I directed the development process,
+                                enhancing cybersecurity awareness through gamified learning.
+                            </p>
+                            <div class="project-skills">
+                                <span>Project Management</span> <span>Unity (C#)</span> <span>Team Building</span>
+                                <span>Design Strategy</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="project-container">
+                            <img src="static/images/Project1.png" class="project-img" alt="Project 1">
+                            <h3 class="project-title">TANGLAW</h3>
+                            <p class="project-role">Lead Developer | Full Stack Developer</p>
+                            <p class="project-desc">
+                                Aimed at simplifying programming language concepts, TANGLAW features a custom-built
+                                lexical analyzer for a unique general-purpose language. I developed both the Website
+                                Application and the Lexical Analyzer.</p>
+                            </p>
+                            <div class="project-skills">
+                                <span>Python</span> <span>JavaScript</span> <span>HTML</span> <span>Flask</span>
+                                <span>CSS</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="project-container">
+                            <img src="static/images/Project2.png" class="project-img" alt="Project 2">
+                            <h3 class="project-title">Building Sinta</h3>
+                            <p class="project-role">Full-Stack Game Developer</p>
+                            <p class="project-desc">
+                                Developed and designed this entire project: a stack-building puzzle game developed as
+                                part of the HCI final requirement. It challenges players to strategically stack building
+                                blocks while emphasizing precision and timing.
+                            </p>
+                            <div class="project-skills">
+                                <span>JavaScript (ES6)</span> <span>HTML5 Canvas</span> <span>Express.js</span>
+                                <span>Zepto.js</span> <span>Node.js</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <button class="carousel-control-prev custom-nav" type="button" data-bs-target="#projectsCarousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon custom-arrow" aria-hidden="true"></span>
+                </button>
+                <button class="carousel-control-next custom-nav" type="button" data-bs-target="#projectsCarousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon custom-arrow" aria-hidden="true"></span>
+                </button>
+            </div>
+
+            <div class="text-center">
+                <button id="seeMoreBtn" class="show-more-btn">More of my work</button>
+            </div>
+
+            <div id="projectCards" class="row mt-4 visible">
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="project-card">
+                        <img src="static/images/Project1.png" class="project-card-img" alt="Project 1">
+                        <div class="project-card-body">
+                            <h3>TANGLAW</h3>
+                            <h3 style="color: gray; font-size: 18px;">Lead Developer | Full Stack Developer</h3>
+                            <p>Aimed at simplifying programming language concepts, TANGLAW features a custom-built
+                                lexical analyzer for a unique general-purpose language. I developed both the Website
+                                Application and the Lexical Analyzer.</p>
+                            <a href="https://jeayuun.github.io/TANGLAW/" target="_blank" class="project-link">View the
+                                Website</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="project-card">
+                        <img src="static/images/Project2.png" class="project-card-img" alt="Project 2">
+                        <div class="project-card-body">
+                            <h3>Building Sinta</h3>
+                            <h3 style="color: gray; font-size: 18px;">Full-Stack Game Developer</h3>
+                            <p>Developed and designed this entire project: a stack-building puzzle game developed as
+                                part of the HCI final requirement. It challenges players to strategically stack building
+                                blocks while emphasizing precision and timing.</p>
+                            <a href="https://jeayuun.github.io/HCI/" target="_blank" class="project-link">Play the
+                                Game</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="project-card">
+                        <img src="static/images/Project3.png" class="project-card-img" alt="Project 3">
+                        <div class="project-card-body">
+                            <h3>Phishing, Please!</h3>
+                            <h3 style="color: gray; font-size: 18px;">Project Manager</h3>
+                            <p>An educational simulation game where players act as cybersecurity analysts tasked with
+                                identifying phishing tactics. As the leader, I directed the development process,
+                                enhancing cybersecurity awareness through gamified learning.</p>
+                            <a href="https://reiidj.itch.io/phishing-please" target="_blank" class="project-link">Try
+                                the Game</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="project-card">
+                        <img src="static/images/Project4.png" class="project-card-img" alt="Project 4">
+                        <div class="project-card-body">
+                            <h3>Task Zenith</h3>
+                            <h3 style="color: gray; font-size: 18px;">Full-Stack Developer | Lead Designer</h3>
+                            <p>An intuitive task management application designed for students to optimize their
+                                productivity. My contributions include full-stack development and crafting an elegant,
+                                user-friendly interface.</p>
+                            <a href="https://github.com/jeayuun/TaskZenith" target="_blank" class="project-link">View
+                                Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="project-card">
+                        <img src="static/images/Project5.png" class="project-card-img" alt="Project 5">
+                        <div class="project-card-body">
+                            <h3>KollinKars: Car Rentals System</h3>
+                            <h3 style="color: gray; font-size: 18px;">Full-Stack Developer | Designer</h3>
+                            <p>A comprehensive car rental management system built for seamless customer and business
+                                interaction. I developed and designed the platform to enable efficient booking and fleet
+                                management with a clean and functional user experience.</p>
+                            <a href="https://github.com/jeayuun/KollinKars-Car-Rental-System" target="_blank"
+                                class="project-link">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="project-card">
+                        <img src="static/images/Project6.png" class="project-card-img" alt="Project 6">
+                        <div class="project-card-body">
+                            <h3>Pasta Haven</h3>
+                            <h3 style="color: gray; font-size: 18px;">Developer | Designer</h3>
+                            <p>A playful cooking simulation game designed to provide an engaging culinary experience. I
+                                brought this project to life using JavaScript, focusing on interactive gameplay and
+                                colorful visual design.</p>
+                            <a href="https://github.com/jeayuun/PastaHaven-Game" target="_blank"
+                                class="project-link">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="project-card">
+                        <img src="static/images/Project7.png" class="project-card-img" alt="Project 7">
+                        <div class="project-card-body">
+                            <h3>PhilHealth Database Management System</h3>
+                            <h3 style="color: gray; font-size: 18px;">Project Manager | Full-Stack Developer | Designer
+                            </h3>
+                            <p>A database management system prototype for PhilHealth, featuring full CRUD operations. I
+                                led the team in designing and developing this system to streamline data handling and
+                                improve accessibility.</p>
+                            <a href="https://github.com/jeayuun/PhilHealth" target="_blank" class="project-link">View
+                                Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="project-card">
+                        <img src="static/images/Project8.png" class="project-card-img" alt="Project 8">
+                        <div class="project-card-body">
+                            <h3>Recipe Book</h3>
+                            <h3 style="color: gray; font-size: 18px;">Full-Stack Developer</h3>
+                            <p>A dynamic recipe-sharing platform created to enhance culinary exploration. I designed and
+                                developed the interface with a focus on user engagement and seamless functionality.</p>
+                            <a href="https://github.com/jeayuun/Recipe" target="_blank" class="project-link">View
+                                Project</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="static/app.js" type="module"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let carousel = document.querySelector("#projectsCarousel");
+            let carouselInstance = new bootstrap.Carousel(carousel, {
+                interval: 5000,
+                wrap: true
+            });
+
+            const projectCards = document.getElementById("projectCards");
+
+            projectCards.classList.remove("opacity-0");  
+            projectCards.classList.add("visible");  
+
+            AOS.refresh();
+        });
+    </script>
+</body>
+
+</html>
