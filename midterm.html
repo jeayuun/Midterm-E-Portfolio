@@ -165,11 +165,13 @@
                     <h5 class="modal-title" id="projectModalLabel"></h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="modal-body" style="padding-top: 20px;">
-                    <img id="modalImage" src="" alt="Project Image" class="img-fluid mb-3" style="border-radius: 12px; object-fit: cover;">
-                    <p id="projectSubtitle" style="font-size: 1.1rem;"></p>
-                    <p id="projectDescription" style="font-size: 1rem; color: #ddd; margin-top: 15px;"></p>
-                    <a id="projectLink" href="#" class="btn btn-primary" target="_blank" style="margin-top: 20px;">View Project</a>
+                    <div class="modal-body" style="padding: 3rem; padding-top: 1rem;">
+                        <div id="modalImageContainer">
+                            <img id="modalImage" src="" alt="Project Image">
+                        </div>
+                        <p id="projectSubtitle" class="text-center"></p><hr style="color: rgb(101, 101, 101);">
+                        <p id="projectDescription" class="text-justify"></p>
+                        <a id="projectLink" href="#" class="btn btn-primary" target="_blank">View Project</a>
                     </div>
                 </div>
                 </div>
@@ -179,7 +181,7 @@
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const projectCards = document.querySelectorAll('.skill-card');
-            const modalImage = document.getElementById('modalImage');
+            const modalImageContainer = document.getElementById('modalImageContainer');
             const projectModalLabel = document.getElementById('projectModalLabel');
             const projectSubtitle = document.getElementById('projectSubtitle');
             const projectDescription = document.getElementById('projectDescription');
@@ -190,108 +192,172 @@
                     let title = "";
                     let subtitle = "";
                     let description = "";
-                    let imgSrc = "";
+                    let content = "";
+                    let link = "";
 
                     if (index === 0) {
                         title = "Naughty or Nice";
                         subtitle = "Midterm Group Project: Quiz Application";
-                        description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
-                        imgSrc = "static/images/MidtermQuiz.png";
+                        description = `
+                            This group project involved building a web-based interactive quiz application named "Santar: Naughty or Nice." The primary goal was to create an engaging and dynamic quiz using HTML, CSS, and JavaScript. In addition to leading and managing the project, I was responsible for designing the application's structure, visual themes, transitions, and interactive animations. I worked closely with my team to ensure the user experience was seamless, fun, and visually appealing.<br><br>
+                            <strong>What I learned:</strong> Through this project, I further deepened my knowledge of JavaScript and its various frameworks and libraries, including jQuery and Lottie, as well as working with JSON. These tools allowed me to add dynamic animations and interactive features to the application. I dedicated over 100 hours to the development process, including spending 15 hours each single day during the Holy Week to refine the application. This experience not only helped me enhance my technical skills but also taught me important life lessons in patience, perseverance, and collaboration.
+                        `;
+                        content = `<img src="static/images/MidtermQuiz.png" class="img-fluid" alt="Project Image">`;
                         link = "https://jeayuun.github.io/Restaurant/index.html";
                     }
 
                     else if (index === 1) {
                         title = "Holiday Website";
                         subtitle = "Activity 1: HTML Text and Images";
-                        description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
-                        imgSrc = "static/images/Activity1.3.png";
+                        description = `
+                            This activity focused on using HTML to create a simple website showcasing significant Philippine holidays, such as Christmas Day, EDSA Revolution, and Philippine Independence Day, each marking significant moments in the nation's history and culture. The goal was to practice embedding images and structuring the page content effectively using HTML tags.<br><br>
+                            <strong>What I learned:</strong> I enhanced my understanding of HTML, particularly with semantic elements like &lt;header&gt;, &lt;footer&gt;, and &lt;section&gt;. I also practiced adjusting attributes like src and alt for images to improve the accessibility of the website.
+                        `;
+                        content = `
+                        <div id="holidayCarousel" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item">
+                                    <img src="static/images/Activity1.1.png" class="d-block w-100" alt="Christmas Day">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="static/images/Activity1.2.png" class="d-block w-100" alt="Independence Day">
+                                </div>
+                                <div class="carousel-item active">
+                                    <img src="static/images/Activity1.3.png" class="d-block w-100" alt="EDSA Revolution">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#holidayCarousel" data-bs-slide="prev" style="height: 50px; width: 50px; margin-left: -10px;">
+                                <span class="carousel-control-prev-icon" aria-hidden="true" style="width: 1.5rem;"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#holidayCarousel" data-bs-slide="next" style="height: 50px; width: 50px; margin-right: -10px;">
+                                <span class="carousel-control-next-icon" aria-hidden="true" style="width: 1.5rem;"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>`;
                         link = "https://jeayuun.github.io/Holidays/";
                     }
                     
                     else if (index === 2) {
                         title = "Recipe Book";
                         subtitle = "Activity 2: HTML Tags";
-                        description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
-                        imgSrc = "static/images/Activity2.png";
+                        description = `
+                            For this activity, I built a simple recipe book using HTML. The project required using various HTML tags to organize the content clearly. Lists, tables, and embedded images were included to format the recipe content neatly. Careful use of headings and containers helped maintain readability. The design is inspired by a French Bakery I used to go to.<br><br>
+                            <strong>What I learned:</strong> I deepened my familiarity with tags like &lt;ol&gt;, &lt;ul&gt;, and &lt;table&gt;. The activity highlighted how to structure data effectively for clarity.
+                        `;
+                        content = `<img src="static/images/Activity2.png" class="img-fluid" alt="Recipe Book">`;
                         link = "https://jeayuun.github.io/Holidays/";
                     }
                     
                     else if (index === 3) {
                         title = "My Portfolio";
                         subtitle = "Activity 3: Building a Personal Portfolio Page Using Bootstrap";
-                        description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
-                        imgSrc = "static/images/Activity3.png";
+                        description = `
+                            In this activity, I created a personal portfolio page using the Bootstrap framework. This task helped me understand how to structure and style a responsive webpage efficiently. I used Bootstrap's grid system to create a layout that adapts to various screen sizes. It was very fun coding this site, and I adore the theme and design of the website.<br><br>
+                            <strong>What I learned:</strong> I became familiar with Bootstrap's grid system and components, such as navigation bars and cards. It gave me practical experience in creating responsive web pages and improved my understanding of front-end frameworks a bit.
+                        `;
+                        content = `<img src="static/images/Activity3.png" class="img-fluid" alt="Portfolio">`;
                         link = "https://jeayuun.github.io/Personal-Portfolio-Activity-3/";
                     }
                     
                     else if (index === 4) {
                         title = "Bistrovanti Restaurant";
                         subtitle = "Activity 4: Responsive Restaurant Website (Group Activity)";
-                        description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
-                        imgSrc = "static/images/Activity4.png";
+                        description = `
+                            This was one of the most enjoyable and fulfilling projects during the midterm. The group created an Italian-themed restaurant website named “Bistrovanti.” I led the project's design direction, carefully selecting the color scheme, layout, and typography to match the branding. I developed the initial website template, which included the navigation structure and reusable components. Then, I connected everyone’s contributions and integrated them into a cohesive site. We used HTML, CSS, JavaScript, and Bootstrap to bring the concept to life, ensuring it was both aesthetically pleasing and fully responsive.<br><br>
+                            <strong>What I learned:</strong> This project significantly enhanced my CSS skills, especially when creating responsive layouts using media queries. I practiced manipulating the interface manually — without AI help — and developed a deeper intuition for frontend styling. It gave me hands-on experience building and maintaining modular code, as well as ensuring cross-device compatibility.
+                        `;
+                        content = `<img src="static/images/Activity4.png" class="img-fluid" alt="Restaurant Website">`;
                         link = "https://jeayuun.github.io/Restaurant/";
                     }
                     
                     else if (index === 5) {
                         title = "AESPA Conference";
                         subtitle = "Activity 5: Event or Conference Webpage";
-                        description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
-                        imgSrc = "static/images/Activity5.png";
+                        description = `
+                            This project involved designing a conference/event webpage that could effectively present key information such as the event schedule, featured speakers, and venue details. While brainstorming ideas, I happened to be listening to AESPA, a K-pop girl group, and was immediately inspired by their Whiplash album's futuristic concept photos. I decided to go with a bold, neon-infused aesthetic that matched the high-tech, high-energy theme. The page layout was carefully structured to guide users through the event's highlights while keeping the design immersive and visually engaging.<br><br>
+                            <strong>What I learned:</strong> This task helped me sharpen my skills in content organization — especially in crafting pages that require structured, multi-part content like schedules and lineups. I also focused on improving the clarity and flow of information while making sure the site remained easy to navigate. The balance of creative visual style and user-friendly layout was a key takeaway for me.
+                        `;
+                        content = `<img src="static/images/Activity5.png" class="img-fluid" alt="Conference Website">`;
                         link = "https://jeayuun.github.io/Conference-Activity-5/";
                     }
                     
                     else if (index === 6) {
                         title = "Operators in JS";
                         subtitle = "Activity 6: Combined Operators using Javascript";
-                        description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
-                        imgSrc = "static/images/Activity6.png";
+                        description = `
+                            This activity was conducted during one of our on-site classes and focused on practicing JavaScript operators. I developed a basic webpage that demonstrates how arithmetic and other operators function within different expressions. The primary objective was to combine these operators in custom functions that performed simple computations. While this was admittedly the least exciting activity for me, I still put effort into creating a clean, functional demonstration of core JavaScript logic.<br><br>
+                            <strong>What I learned:</strong> This activity helped reinforce my knowledge of JavaScript operator syntax and how they behave when used within different contexts. Though not the most creative task, it was fundamental in strengthening my understanding of JavaScript fundamentals.
+                        `;
+                        content = `<img src="static/images/Activity6.png" class="img-fluid" alt="JavaScript Operators">`;
                         link = "https://www.dropbox.com/scl/fi/l8hacbmmjzn6pieksvbk2/COMP-016-VILLEGAS_Activity-6.html?rlkey=r118fds4ct9be7qi5a4l4a0s8&st=fh66fwbj&dl=0";
                     }
                     
                     else if (index === 7) {
                         title = "HTML Assessment";
                         subtitle = "Assignment 1: Web Development";
-                        description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
-                        imgSrc = "static/images/Assignment1.png";
+                        description = `
+                            This written assessment covered core web development concepts such as best practices (code optimization, security, accessibility), backend development, and the importance of semantic HTML. I also explored emerging technologies like Progressive Web Apps and WebAssembly, and compared backend tools like Node.js, PHP, and Django. Writing detailed answers by hand helped reinforce my understanding of both the theoretical and practical aspects of modern web development.<br><br>
+                            <strong>What I learned:</strong> I gained a clearer understanding of web architecture, improved my ability to explain technical topics, and deepened my knowledge of how performance, security, and accessibility shape user experience on the web.
+                        `;
+                        content = `<img src="static/images/Assignment1.png" class="img-fluid" alt="HTML Assessment">`;
                         link = "https://www.dropbox.com/scl/fi/ivhg7wsu3qkdb6ck6os3w/COMP-016_Villegas_BSCS-3-1N_Assignment-1-Web-Development.pdf?rlkey=2ztxqrk8vahnhpfom10ulzfeu&st=thzok0uy&dl=0";
                     }
                     
                     else if (index === 8) {
                         title = "HTML/CSS Quiz";
                         subtitle = "Quiz 1: HTML and CSS learning assessment";
-                        description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
-                        imgSrc = "static/images/Quiz1.png";
+                        description = description = `
+                            <strong>What I learned:</strong> This quiz was a self-assessment tool to measure my understanding of HTML and CSS. Through the questions, I was able to test my knowledge on topics such as the box model, positioning, and semantic HTML. The quiz gave me a clearer picture of areas I needed to improve, particularly CSS styling techniques. The score is not final and is still yet to be revised.
+                        `;
+                        content = `<img src="static/images/Quiz1.png" class="img-fluid" alt="HTML/CSS Quiz">`;
                         link = "https://www.dropbox.com/scl/fi/p1x4t1xnprdtbij17p3di/Quiz1.png?rlkey=2h0c69vq703z6x0j1twg3rdk6&st=0azyd8xh&dl=0";
                     }
                     
                     else if (index === 9) {
                         title = "About Me";
                         subtitle = "Get to know more about yours truly !";
-                        description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
-                        imgSrc = "static/images/AboutMe.png";
+                        description = `
+                            This section provided an overview of myself, detailing my key traits, first impression of the professor, and the specific topics I wanted to learn in the course. I included a photo of myself and added stickers to make the layout more fun and visually appealing. The goal was to introduce who I am in a simple yet expressive way.<br><br>
+                            <strong>What I learned:</strong> It was a great opportunity to practice design and visual impact in a non-web format.
+                        `;
+                        content = `<img src="static/images/AboutMe.png" class="img-fluid" alt="About Me">`;
                         link = "https://www.dropbox.com/scl/fi/effxb032yiolmmsa5h18l/COMP-016_Villegas_BSCS-3-1N_About-Me.pdf?rlkey=4ti6f9syq786kmaujdd87p3wf&st=z7hw6gby&dl=0";
                     }
                     
                     else {
                         title = "Midterm E-Portfolio";
                         subtitle = "Midterm Project: Midterm E-Portfolio";
-                        description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.";
-                        imgSrc = "static/images/MidtermPortfolio.png"; 
+                        description = `
+                            This is the website itself—a compilation of all the activities, projects, and assessments I completed throughout the midterm period. This E-Portfolio showcases my progress in the COMP 016 course, integrating everything I have learned.<br><br>
+                            <strong>What I learned:</strong> This project gave me a valuable opportunity to reflect on my learning journey, revisit each task with fresh eyes, and appreciate how much I’ve grown in both technical skill and creative expression.
+                        `;
+                        content = `<img src="static/images/MidtermPortfolio.png" class="img-fluid" alt="E-Portfolio">`;
                         link = "#"; 
                     }
 
-                    modalImage.src = imgSrc;
+                    modalImageContainer.innerHTML = content;
+                    if (index !== 1) {
+                        const imgs = modalImageContainer.getElementsByTagName('img');
+                        for (let img of imgs) {
+                            img.classList.add('img-fluid');
+                        }
+                    }
+
                     projectModalLabel.textContent = title;
                     projectSubtitle.textContent = subtitle;
-                    projectDescription.textContent = description;
+                    projectDescription.innerHTML = description;
                     projectLink.href = link;
+
+                    if (index === 1) {
+                        new bootstrap.Carousel(document.getElementById('holidayCarousel'));
+                    }
 
                     const modal = new bootstrap.Modal(document.getElementById('projectModal'));
                     modal.show();
                 });
             });
         });
-
     </script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
