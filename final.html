@@ -22,6 +22,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
@@ -31,26 +32,274 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="midterm.html">Midterm</a></li>
-                <li class="nav-item"><a class="nav-link active" href="final.html">Final</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link active" href="midterm.html">Midterm</a></li>
+                <li class="nav-item"><a class="nav-link" href="final.html">Final</a></li>
                 <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <section class="home-section dark-section">
-        <span class="term" data-aos="fade-up">FINAL</span>
-        <h1 class="title" data-aos="fade-up">Coming Soon.</h1>
+    <section class="home-section dark-section" style="background: linear-gradient(180deg, rgb(20, 20, 20) -50.14%, rgb(0, 0, 0) 124.86%);">
+        <span class="term" data-aos="fade-up" style="margin-top: 50px;">FINAL</span>
+        <h1 class="title" data-aos="fade-up">My Submissions</h1>
         <p class="description" style="margin-top: 20px;" data-aos="fade-up">
-            This page will feature a collection of my future submissions—including assignments, activities, and quizzes—for the final term of the COMP 016: Web Development course.
+            This section highlights the projects, activities, and assignments I completed during the final term of the COMP 016: Web Development course, along with a comprehensive breakdown of my work and the insights I gained throughout the term.
         </p>
+        <div data-aos="fade-down">
+            <div class="arrow-container" data-aos="fade-down" style="margin-top: 30px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none"
+                    stroke="#353535" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <polyline points="19 12 12 19 5 12"></polyline>
+                </svg>
+            </div>
+        </div>
     </section>
+
+    <section id="skills" class="dark-section" style="background-color: black;">
+        <div class="container">
+            <h2 class="section-title descr" style="font-size: 2rem; max-width: 800px;" data-aos="fade-up">Here is the complete set of <span
+                    class="highlight">requirements</span> I have submitted for the <span
+                    class="highlight"> final term</span> of the COMP 016 course.</h2>
+            <p class="description" style="margin: 50px 0; margin-top: 25px;" data-aos="fade-up">
+                Click on each card to view them one by one.
+            </p>
+
+            <!-- Projects Cards -->
+            <div class="skills-grid" data-aos="fade-up">
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <i class="bi bi-book-half skill-icon"></i>
+                        <h3>KaleidoLearn</h3>
+                    </div>
+                    <p>Final Group Project: E-Learning Platform</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <i class="bi bi-chat-left-heart-fill skill-icon"></i>
+                        <h3>Barbie Movies Forum</h3>
+                    </div>
+                    <p>Final Activity 3: Basic CRUD on Laravel</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <i class="bi bi-shield-check skill-icon"></i>
+                        <h3>Laravel Authentication</h3>
+                    </div>
+                    <p>Final Activity 2: Laravel Authentication</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <i class="bi bi-box-arrow-down skill-icon"></i>
+                        <h3>Laravel Installation</h3>
+                    </div>
+                    <p>Final Activity 1: Laravel Installation</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <i class="bi bi-bluesky skill-icon"></i> 
+                        <h3>Final E-Portfolio</h3>
+                    </div>
+                    <p>Final Project: Final Term E-Portfolio</p>
+                </div>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content" style="background-color: #1a1918; color: white; border: 1px solid #ffffff24;">
+                    <div class="modal-header" style="border-bottom: none;">
+                    <h5 class="modal-title" id="projectModalLabel"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" style="padding: 3rem; padding-top: 1rem;">
+                        <div id="modalImageContainer">
+                            <img id="modalImage" src="" alt="Project Image">
+                        </div>
+                        <p id="projectSubtitle" class="text-center"></p><hr style="color: rgb(101, 101, 101);">
+                        <p id="projectDescription" class="text-justify"></p>
+                        <a id="projectLink" href="#" class="btn btn-primary" target="_blank" style="width: 28%">View Submission</a>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const projectCards = document.querySelectorAll('.skill-card');
+            const modalImageContainer = document.getElementById('modalImageContainer');
+            const projectModalLabel = document.getElementById('projectModalLabel');
+            const projectSubtitle = document.getElementById('projectSubtitle');
+            const projectDescription = document.getElementById('projectDescription');
+            const projectLink = document.getElementById('projectLink');
+
+            projectCards.forEach((card, index) => {
+                card.addEventListener('click', function () {
+                    let title = "";
+                    let subtitle = "";
+                    let description = "";
+                    let content = "";
+                    let link = "";
+
+                    if (index === 0) {
+                        title = "KaleidoLearn | E-Learning Platform";
+                        subtitle = "Final Group Project: E-Learning Platform";
+                        description = `
+                            This project focused on building a comprehensive Laravel-based E-learning Management System designed for distinct user roles: Admin, Teacher, and Student. It supports core functionalities including course management, quizzes, assignments, and detailed tracking of student progress. Emphasis was placed on developing secure role-based access control (RBAC), implementing intuitive user interfaces with Laravel’s Blade templates, and ensuring a responsive user experience using Tailwind CSS and Bootstrap.<br><br>
+                            <strong>What I learned:</strong> I enhanced my understanding of Laravel's powerful features such as Eloquent ORM, Blade templating, middleware usage for RBAC, and effective database schema normalization. I also improved my skills in modern web application practices, including asynchronous requests with Axios, frontend build optimizations with Vite, and UI/UX considerations for educational platforms.
+                        `;
+                        content = `
+                        <div id="holidayCarousel" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="static/images/fp1.png" class="d-block w-100">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="static/images/fp2.png" class="d-block w-100">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="static/images/fp3.png" class="d-block w-100">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="static/images/fp4.png" class="d-block w-100">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="static/images/fp5.png" class="d-block w-100">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="static/images/fp6.png" class="d-block w-100">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="static/images/fp7.png" class="d-block w-100">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="static/images/fp8.png" class="d-block w-100">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="static/images/fp9.png" class="d-block w-100">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#holidayCarousel" data-bs-slide="prev" style="height: 50px; width: 50px; margin-left: -10px;">
+                                <span class="carousel-control-prev-icon" aria-hidden="true" style="width: 1.5rem;"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#holidayCarousel" data-bs-slide="next" style="height: 50px; width: 50px; margin-right: -10px;">
+                                <span class="carousel-control-next-icon" aria-hidden="true" style="width: 1.5rem;"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>`;
+                        link = "https://github.com/jeayuun/E-Learning-Platform";
+                    }
+
+                    else if (index === 1) {
+                        title = "Barbie Movies Forum";
+                        subtitle = "Final Activity 3: Basic CRUD on Laravel";
+                        description = `
+                            In this project, I created the Barbie Movies Forum, an interactive web platform developed using Laravel, allowing users to engage in discussions specifically about Barbie films. The site offers user-generated posts, moderated interactions, and dedicated admin functionalities to manage content efficiently. Key features include distinct role-based permissions, secure authentication, movie discussions, post moderation, and CRUD functionalities.<br><br>
+                            <strong>What I learned:</strong> I enhanced my skills in developing robust web applications with Laravel, deepening my understanding of Eloquent ORM for efficient database management, implementing comprehensive CRUD operations, and designing intuitive user interfaces with Blade templating. Additionally, I gained valuable insights into role-based access control, secure authentication processes, and user-driven content moderation practices.
+                        `;
+                        content = `
+                        <div id="holidayCarousel" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="static/images/a3_1.png" class="d-block w-100">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="static/images/a3_2.png" class="d-block w-100">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="static/images/a3_3.png" class="d-block w-100">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="static/images/a3_4.png" class="d-block w-100">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#holidayCarousel" data-bs-slide="prev" style="height: 50px; width: 50px; margin-left: -10px;">
+                                <span class="carousel-control-prev-icon" aria-hidden="true" style="width: 1.5rem;"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#holidayCarousel" data-bs-slide="next" style="height: 50px; width: 50px; margin-right: -10px;">
+                                <span class="carousel-control-next-icon" aria-hidden="true" style="width: 1.5rem;"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>`;
+                        link = "https://drive.google.com/file/d/16Ch1fBphVZOxyXmBwBXdlNT_YmoF1XzS/view?usp=sharing";
+                    }
+                    
+                    else if (index === 2) {
+                        title = "Laravel Authentication";
+                        subtitle = "Final Activity 2: Laravel Authentication";
+                        description = `
+                            This activity focused on implementing secure authentication using the Laravel framework. I created a structured and secure login and registration system integrated into a user-friendly dashboard. This setup leverages Laravel's powerful built-in authentication features, providing efficient management of user access and securing user data.<br><br>
+                            <strong>What I learned:</strong> Through this activity, I deepened my knowledge of Laravel's authentication system, understanding crucial concepts like session management, user validation, secure password hashing, and dynamic dashboard creation using Blade templates. Additionally, I gained practical experience in developing secure and intuitive user interfaces, significantly enhancing my web security implementation skills.
+                        `;
+                        content = `<img src="static/images/a2.png" class="img-fluid" alt="Recipe Book">`;
+                        link = "https://drive.google.com/file/d/1SKeIroZEnB8J7w10mz3JO1xB0JZI2RAH/view?usp=sharing";
+                    }
+                    
+                    else if (index === 3) {
+                        title = "Laravel Installation";
+                        subtitle = "Final Activity 1: Laravel Installation";
+                        description = `
+                            This activity focused on the initial setup and configuration of Laravel, a robust PHP web application framework. I successfully installed Laravel and essential development tools like Laragon and Composer. Additionally, I verified the installation by creating a new Laravel project and ensuring proper functionality by accessing the Laravel homepage in a browser.<br><br>
+                            <strong>What I learned:</strong> Through this foundational activity, I became proficient in setting up a complete Laravel development environment, understanding the role of Composer in dependency management, and utilizing Laragon for streamlined local web server operations. This experience laid a solid groundwork for future Laravel projects and boosted my confidence in handling essential setup tasks efficiently.
+                        `;
+                        content = `<img src="static/images/a1.png" class="img-fluid" alt="Portfolio">`;
+                        link = "https://drive.google.com/file/d/1MCuAY6A-9qdJlI1FYfqVfWL3jueEw5j3/view?usp=sharing";
+                    }
+                    
+                    else if (index === 4) {
+                        title = "Final E-Portfolio";
+                        subtitle = "Final Project: Final Term E-Portfolio";
+                        description = `
+                            This Final E-Portfolio showcases the complete set of projects, activities, and assignments I successfully completed during the final term of COMP 016: Web Development. It includes:<br><br>
+                            <ul>
+                                <li><strong>E-Learning Management System:</strong> A comprehensive Laravel-based platform with role-based access control (RBAC), CRUD operations, and intuitive UI/UX design.</li>
+                                <li><strong>Barbie Movies Forum:</strong> An interactive Laravel-based discussion platform enabling user-generated content, moderated interactions, and admin management of movie records and posts.</li>
+                                <li><strong>Laravel Authentication Project:</strong> Secure implementation of user registration, login functionalities, session management, and intuitive dashboards.</li>
+                                <li><strong>Laravel Installation Activity:</strong> Successful installation and setup of Laravel using Composer and Laragon, including project creation and browser validation.</li>
+                            </ul><br>
+                            <strong>What I learned:</strong> Throughout the term, I significantly expanded my expertise in Laravel, mastering complex backend processes such as database management with Eloquent ORM, secure authentication practices, role-based access controls, and efficient CRUD functionalities. Additionally, I improved my frontend development skills by creating responsive and intuitive user interfaces using Blade templating, Bootstrap, and Tailwind CSS. These experiences enhanced my confidence in delivering robust, secure, and scalable web applications, positioning me well for advanced web development tasks in the future.
+                        `;
+                        content = `<img src="static/images/fp.png" class="img-fluid">`;
+                        link = "https://jeayuun.github.io/COMP016-E-Portfolio/final.html";
+                    }
+
+                    modalImageContainer.innerHTML = content;
+                    if (index !== 0 && index !== 1) {
+                        const imgs = modalImageContainer.getElementsByTagName('img');
+                        for (let img of imgs) {
+                            img.classList.add('img-fluid');
+                        }
+                    }
+
+                    projectModalLabel.textContent = title;
+                    projectSubtitle.textContent = subtitle;
+                    projectDescription.innerHTML = description;
+                    projectLink.href = link;
+
+                    if (index === 0 || index === 1) {
+                        new bootstrap.Carousel(document.getElementById('holidayCarousel'));
+                    }
+
+                    const modal = new bootstrap.Modal(document.getElementById('projectModal'));
+                    modal.show();
+                });
+            });
+        });
+    </script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>    
     <script src="static/app.js" type="module"></script>
+    
 </body>
 
 </html>
